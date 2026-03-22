@@ -3,7 +3,7 @@
 
 // In development the Vite dev-server proxy rewrites /api/* → http://localhost/smart-attendance/backend/api/*
 // In production (when built files are served from Apache), /api/* hits Apache directly.
-const BASE = '/api';
+const BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}/api` : '/api';
 
 async function request<T>(
   path: string,
