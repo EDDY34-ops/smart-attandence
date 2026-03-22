@@ -4,7 +4,12 @@
 
 function applyCors(): void
 {
-    $allowed = ['http://localhost:8080', 'http://localhost:3000', 'http://127.0.0.1:8080'];
+    $allowed = [
+        'http://localhost:8080', 
+        'http://localhost:3000', 
+        'http://127.0.0.1:8080',
+        'https://smart-attandence-739xsotzp-eddy34-ops-projects.vercel.app'
+    ];
     $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 
     if (in_array($origin, $allowed, true)) {
